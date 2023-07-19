@@ -7,8 +7,11 @@ type ThemeProp = {
 
 export enum themePalette {
   BG = "#12181b",
-  LIME = "#C8FA5F",
+  LIME = "#0a539c",
   FONT_GLOBAL = "'JetBrains MONO', monospace",
+  // ALERT STYLES
+  ERROR_MAIN = "#f44336",
+  BG_ERROR_MAIN = "rgba(244,67,54,0.1)",
 }
 
 const theme = createTheme({
@@ -33,6 +36,21 @@ const theme = createTheme({
           borderRadius: "0.5em",
         },
       },
+    },
+    MuiAlert: {
+      defaultProps: {
+        style: {
+          borderRadius: "0.8em",
+          fontSize: "1em",
+        },
+      },
+      styleOverrides: {
+        standardError: {
+          backgroundColor: themePalette.BG_ERROR_MAIN,
+          color: themePalette.ERROR_MAIN,
+          border: `1px solid ${themePalette.ERROR_MAIN}`,
+        }
+      }
     },
   },
 });
