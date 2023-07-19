@@ -1,2 +1,3 @@
-export {Notification} from './Notification'
+export { HeaderComponent } from './Header'
 
+export {Notification} from './Notification'
