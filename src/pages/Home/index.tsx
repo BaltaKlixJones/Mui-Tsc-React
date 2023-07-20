@@ -44,11 +44,11 @@ export const HomePage: React.FC<{}> = () => {
       <HeaderComponent
         title="Rick and Morty"
         description="Bienvenido a la pagina de Rick and Morty"
-        // element={
-        //   <Button fullWidth variant="contained">
-        //     Hola mundo
-        //   </Button>
-        // }
+        element={
+          <Button fullWidth variant="contained">
+            Hola mundo
+          </Button>
+        }
       />
       {loading ? (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
