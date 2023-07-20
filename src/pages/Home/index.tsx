@@ -52,8 +52,7 @@ export const HomePage: React.FC<{}> = () => {
       />
       {loading ? (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
-          {" "}
-          <CircularProgress />{" "}
+          <CircularProgress />
         </Box>
       ) : (
         <>
@@ -66,7 +65,7 @@ export const HomePage: React.FC<{}> = () => {
                 count={count}
                 page={page}
                 onChange={handleChange}
-                sx={{ mt: 3}}
+                sx={{ mt: 3 }}
                 size="large"
               />
             </Box>
@@ -80,6 +79,7 @@ export const HomePage: React.FC<{}> = () => {
                       name={character.name}
                       status={character.status}
                       species={character.species}
+                      id={character.id}
                     />
                   </Grid>
                 ))}

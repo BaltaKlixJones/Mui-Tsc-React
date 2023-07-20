@@ -8,16 +8,20 @@ import {
   Divider
 } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
     image: string;
     name: string;
     status: string
     species: string;
-
+  id: number ;
 }
 
-export const CardComponent: React.FC<CardProps> = ({ image, name, status, species}) => {
+export const CardComponent: React.FC<CardProps> = ({id, image, name, status, species}) => {
+
+  const navigate = useNavigate();
+
   return (
     <Card >
       <CardMedia
@@ -33,7 +37,9 @@ export const CardComponent: React.FC<CardProps> = ({ image, name, status, specie
         <Typography sx={{mt:1.5}}>Estado: {status}</Typography>
       </CardContent>
       <CardActions>
-        <Button fullWidth variant="contained" size="small">Learn More</Button>
+      
+        <Button fullWidth variant="contained" size="small" onClick={()=> (navigate(`character/${id}`))}>Learn More</Button>
+     
       </CardActions>
     </Card>
   );
