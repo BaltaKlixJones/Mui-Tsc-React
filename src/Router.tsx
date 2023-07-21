@@ -1,10 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import { RouterLayout } from "./common/RouterLayout";
-import { HomePage } from "./pages/Home";
-import { LoginPage } from "./pages/Login";
-import { CharacterPage } from "./pages/Character";
+import { HomePage, LoginPage, CharacterPage } from "./pages";
+
 
 export const AppRouter: React.FC<{}> = () => {
   return (
