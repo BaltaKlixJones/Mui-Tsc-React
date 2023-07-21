@@ -32,17 +32,16 @@ export const CharacterPage: React.FC = () => {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Container maxWidth="xl">
         {loading ? (
-          <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+          <Box sx={{ display: "flex", justifyContent: "center",alignItems:"center", mt: 20 }}>
             <CircularProgress />
           </Box>
         ) : (
-          <Grid sx={{ mt: 2 }} container columnSpacing={2}>
+            <Container maxWidth="xl">
+          <Grid sx={{ mt: 10 }} container columnSpacing={10}>
             <Grid item xs={6}>
               <Typography variant="h2">{character!.name}</Typography>
               <Divider />
-
               <Typography variant="h5">{character!.species}</Typography>
               <Typography variant="h5">{character!.origin.name}</Typography>
               <Typography variant="h5">{character!.gender}</Typography>
@@ -63,8 +62,8 @@ export const CharacterPage: React.FC = () => {
               />
             </Grid>
           </Grid>
-        )}
       </Container>
+        )}
     </Box>
   );
 };

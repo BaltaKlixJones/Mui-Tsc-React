@@ -27,7 +27,7 @@ export const NavBar: React.FC<{}> = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky">
+      <AppBar position="fixed">
         <Toolbar>
           <Container maxWidth="xl">
             <Grid
@@ -36,7 +36,7 @@ export const NavBar: React.FC<{}> = () => {
               justifyContent="space-between"
               alignItems="center"
             >
-              <Grid item>
+              <Grid item sx={{cursor: "pointer"}} onClick={() => navigate("/")}>
                 <Typography>Logo</Typography>
               </Grid>
               <Grid item>
