@@ -38,9 +38,9 @@ export const HorizontalCardComponent: React.FC<
       />
       <Grid item xs={9}>
         <CardContent>
-          <Typography variant="h5"> {name}</Typography>
+          <Typography variant="h5">{name}</Typography>
           <Divider />
-          <Typography > {info}</Typography>
+          <Typography>{info}</Typography>
         </CardContent>
       </Grid>
       <Grid item xs={2}>
