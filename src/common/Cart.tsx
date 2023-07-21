@@ -36,16 +36,15 @@ export const CartComponent: React.FC<CartComponentProps> = ({
         </Stack>
         <Divider sx={{ my: 1.5 }} />
         {items.length > 0 ? (
-          items.map(
-            ({id, image, name, info}) =>
-              <HorizontalCardComponent
+          items.map(({ id, image, name, info }) => (
+            <HorizontalCardComponent
               id={id}
               key={id}
               image={image}
               name={name}
               info={info}
-              />
-          )
+            />
+          ))
         ) : (
           <Typography variant="h6">No items in cart</Typography>
         )}
