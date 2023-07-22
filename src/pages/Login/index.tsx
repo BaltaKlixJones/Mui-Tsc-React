@@ -7,7 +7,7 @@ import {
   Typography,
   TextField,
   Button,
-  Divider,
+  
 } from "@mui/material";
 
 import { useNotification } from "../../context/notification.context";
@@ -62,7 +62,7 @@ const LoginPage: React.FC<{}> = () => {
         >
           Inicia sesion con cualquier cuenta
         </Typography>
-
+        
         <Grid item>
           <Paper sx={{ padding: "1.2em", borderRadius: ".5em" }}>
             <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>

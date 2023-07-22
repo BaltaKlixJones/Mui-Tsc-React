@@ -9,11 +9,12 @@ import {
   Stack,
   IconButton,
   Badge,
+
 } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { FavoriteBorder, ShoppingCartOutlined } from "@mui/icons-material";
+import { FavoriteBorder } from "@mui/icons-material";
 import { CartComponent } from "./Cart";
 import { logout } from "../redux/slices/auth.slice";
 
@@ -92,6 +93,7 @@ export const NavBar: React.FC<{}> = () => {
         open={open}
         handleStateViewDrawer={handleStateViewDrawer}
       />
+    
     </Box>
   );
 };
