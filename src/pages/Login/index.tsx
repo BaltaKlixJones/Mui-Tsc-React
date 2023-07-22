@@ -7,6 +7,7 @@ import {
   Typography,
   TextField,
   Button,
+  Divider,
 } from "@mui/material";
 
 import { useNotification } from "../../context/notification.context";
@@ -33,15 +34,17 @@ const LoginPage: React.FC<{}> = () => {
       password: "",
     },
     validationSchema: LoginValidate,
-    onSubmit: (values: LoginType) => {
+    onSubmit: () => {
       dispatch(login())
       navigate('/')
-      getSuccess(JSON.stringify(values));
-      // getSuccess("Login Success")
+      // getSuccess(JSON.stringify(values));
+      getSuccess("Login Success")
     },
   });
 
   return isAuth ? <Navigate to="/" replace/> : (
+    
+    
     <Container maxWidth="sm">
       <Grid
         container
@@ -50,6 +53,8 @@ const LoginPage: React.FC<{}> = () => {
         justifyContent="center"
         sx={{ minHeight: "100vh" }}
       >
+      <Typography variant="h5"sx={{mb: 10}} justifyContent="center" display="flex" alignItems="center">Inicia sesion con cualquier cuenta</Typography>
+      
         <Grid item>
           <Paper sx={{ padding: "1.2em", borderRadius: ".5em" }}>
             <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>

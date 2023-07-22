@@ -22,12 +22,12 @@ export const NavBar: React.FC<{}> = () => {
   const [open, setOpen] = React.useState<boolean>(false);
   const items = useAppSelector((state) => state.cartReducer);
   const { isAuth } = useAppSelector((state) => state.authReducer);
-  const dispacth = useAppDispatch()
+  const dispacth = useAppDispatch();
 
   const handlerLogout = () => {
-    dispacth(logout())
-    navigate('/login')
-  }
+    dispacth(logout());
+    navigate("/login");
+  };
 
   const handleStateViewDrawer = () => {
     setOpen((state) => !state);
@@ -53,9 +53,7 @@ export const NavBar: React.FC<{}> = () => {
               </Grid>
               <Grid item>
                 {isAuth ? (
-                  <Button variant="contained" onClick={()=> handlerLogout()}> Logout</Button>
-                ) : (
-                  <Stack direction="row" spacing={2}>
+                  <Stack direction="row" spacing={5}>
                     <IconButton
                       color="primary"
                       onClick={() => handleStateViewDrawer()}
@@ -64,6 +62,13 @@ export const NavBar: React.FC<{}> = () => {
                         <ShoppingCartOutlined />
                       </Badge>
                     </IconButton>
+                    <Button variant="contained" onClick={() => handlerLogout()}>
+                      {" "}
+                      Logout
+                    </Button>
+                  </Stack>
+                ) : (
+                  <Stack direction="row" spacing={2}>
                     <Button
                       variant="contained"
                       onClick={() => navigate("login")}

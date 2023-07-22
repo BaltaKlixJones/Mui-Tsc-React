@@ -43,7 +43,7 @@ export const HomePage: React.FC<{}> = () => {
     <Container maxWidth="xl">
       <HeaderComponent
         title="Rick and Morty"
-        description="Bienvenido a la pagina de Rick and Morty"
+        description="Bienvenido a la App de Rick and Morty"
         element={
           <Button fullWidth variant="contained">
             Hola mundo
