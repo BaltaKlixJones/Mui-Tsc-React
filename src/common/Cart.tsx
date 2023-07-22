@@ -29,7 +29,7 @@ export const CartComponent: React.FC<CartComponentProps> = ({
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typography variant="h5"> Cart</Typography>
+          <Typography variant="h5"> Favorites</Typography>
           <IconButton color="primary" onClick={() => handleStateViewDrawer()}>
             <CloseRoundedIcon />
           </IconButton>
@@ -46,7 +46,7 @@ export const CartComponent: React.FC<CartComponentProps> = ({
             />
           ))
         ) : (
-          <Typography variant="h6">No items in cart</Typography>
+          <Typography variant="h6">No items in favorites</Typography>
         )}
       </Box>
     </Drawer>

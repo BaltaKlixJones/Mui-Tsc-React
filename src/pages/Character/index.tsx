@@ -30,6 +30,8 @@ import {
       });
   }, []);
 
+  const statusColor = character?.status === "Alive" ? "success" : "error";
+
   return (
     <Box sx={{ width: "100%" }}>
         {loading ? (
@@ -38,18 +40,23 @@ import {
           </Box>
         ) : (
             <Container maxWidth="xl">
-          <Grid sx={{ mt: 10 }} container columnSpacing={10}>
-            <Grid item xs={6}>
-              <Typography variant="h2">{character!.name}</Typography>
+          <Grid sx={{ mt: 10 }} container columnSpacing={10} alignItems="center" >
+            <Grid item xs={6} >
+              <Typography variant="h2" textAlign="center" >{character!.name}</Typography>
               <Divider />
-              <Typography variant="h5">{character!.species}</Typography>
-              <Typography variant="h5">{character!.origin.name}</Typography>
-              <Typography variant="h5">{character!.gender}</Typography>
+              <Box marginTop={7} > 
+              <Typography variant="h5" >Specie: {character!.species}</Typography>
+              <Divider />
+              <Typography variant="h5"> Origin name: {character!.origin.name}</Typography>
+              <Divider />
+              <Typography variant="h5">Gender: {character!.gender}</Typography>
+              <Divider />
+              </Box>
 
-              <Box sx={{ mt: 2 }}>
+              <Box sx={{ mt: 7 }} justifyContent="center" display="flex" >
                 <Chip
                   label={character?.status}
-                  color="success"
+                  color={statusColor}
                   variant="outlined"
                 />
               </Box>

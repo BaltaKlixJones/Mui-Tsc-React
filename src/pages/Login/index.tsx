@@ -25,8 +25,8 @@ type LoginType = {
 const LoginPage: React.FC<{}> = () => {
   const { isAuth } = useAppSelector((state) => state.authReducer);
   const { getSuccess } = useNotification();
-  const navigate = useNavigate()
-  const dispatch = useAppDispatch()
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const formik = useFormik<LoginType>({
     initialValues: {
@@ -35,16 +35,16 @@ const LoginPage: React.FC<{}> = () => {
     },
     validationSchema: LoginValidate,
     onSubmit: () => {
-      dispatch(login())
-      navigate('/')
+      dispatch(login());
+      navigate("/");
       // getSuccess(JSON.stringify(values));
-      getSuccess("Login Success")
+      getSuccess("Login Success");
     },
   });
 
-  return isAuth ? <Navigate to="/" replace/> : (
-    
-    
+  return isAuth ? (
+    <Navigate to="/" replace />
+  ) : (
     <Container maxWidth="sm">
       <Grid
         container
@@ -53,8 +53,16 @@ const LoginPage: React.FC<{}> = () => {
         justifyContent="center"
         sx={{ minHeight: "100vh" }}
       >
-      <Typography variant="h5"sx={{mb: 10}} justifyContent="center" display="flex" alignItems="center">Inicia sesion con cualquier cuenta</Typography>
-      
+        <Typography
+          variant="h5"
+          sx={{ mb: 10 }}
+          justifyContent="center"
+          display="flex"
+          alignItems="center"
+        >
+          Inicia sesion con cualquier cuenta
+        </Typography>
+
         <Grid item>
           <Paper sx={{ padding: "1.2em", borderRadius: ".5em" }}>
             <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>

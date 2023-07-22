@@ -13,7 +13,7 @@ import {
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { ShoppingCartOutlined } from "@mui/icons-material";
+import { FavoriteBorder, ShoppingCartOutlined } from "@mui/icons-material";
 import { CartComponent } from "./Cart";
 import { logout } from "../redux/slices/auth.slice";
 
@@ -49,7 +49,7 @@ export const NavBar: React.FC<{}> = () => {
                 sx={{ cursor: "pointer" }}
                 onClick={() => navigate("/")}
               >
-                <Typography>Logo</Typography>
+                <Typography>Home</Typography>
               </Grid>
               <Grid item>
                 {isAuth ? (
@@ -59,7 +59,7 @@ export const NavBar: React.FC<{}> = () => {
                       onClick={() => handleStateViewDrawer()}
                     >
                       <Badge color="error" badgeContent={items.length}>
-                        <ShoppingCartOutlined />
+                        <FavoriteBorder />
                       </Badge>
                     </IconButton>
                     <Button variant="contained" onClick={() => handlerLogout()}>
